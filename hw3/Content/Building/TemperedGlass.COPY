@@ -1,0 +1,162 @@
+Begin Object Class=/Script/Engine.Material Name="TemperedGlass"
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_3"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_5"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionFeatureLevelSwitch Name="MaterialExpressionFeatureLevelSwitch_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionFresnel Name="MaterialExpressionFresnel_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionLinearInterpolate Name="MaterialExpressionLinearInterpolate_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_10"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_3"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_5"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_8"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_9"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionVectorParameter Name="MaterialExpressionVectorParameter_0"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_1"
+   End Object
+   Begin Object Name="MaterialExpressionConstant_3"
+      R=1.000000
+      MaterialExpressionEditorX=-1060
+      MaterialExpressionEditorY=520
+      MaterialExpressionGuid=7F43A43B4CF111C166531C83451D77E4
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_5"
+      R=1.000000
+      MaterialExpressionEditorX=-700
+      MaterialExpressionEditorY=820
+      MaterialExpressionGuid=97F3066B4CA2BA21402F698594D06C6E
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionFeatureLevelSwitch_0"
+      Default=(Expression=MaterialExpressionLinearInterpolate'"TemperedGlass:MaterialExpressionLinearInterpolate_0"')
+      Inputs(0)=(Expression=MaterialExpressionConstant'"TemperedGlass:MaterialExpressionConstant_5"')
+      Inputs(1)=(Expression=MaterialExpressionConstant'"TemperedGlass:MaterialExpressionConstant_5"')
+      Inputs(2)=(Expression=MaterialExpressionLinearInterpolate'"TemperedGlass:MaterialExpressionLinearInterpolate_0"')
+      Inputs(3)=(Expression=MaterialExpressionLinearInterpolate'"TemperedGlass:MaterialExpressionLinearInterpolate_0"')
+      MaterialExpressionEditorX=-300
+      MaterialExpressionEditorY=600
+      MaterialExpressionGuid=2ED7B2104F7F6C1ED28AE49E30E3E84A
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionFresnel_0"
+      ExponentIn=(Expression=MaterialExpressionScalarParameter'"TemperedGlass:MaterialExpressionScalarParameter_9"')
+      BaseReflectFraction=0.000000
+      MaterialExpressionEditorX=-1155
+      MaterialExpressionEditorY=833
+      MaterialExpressionGuid=B8F2DB10406A0AA30CA38282BD8E145D
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionLinearInterpolate_0"
+      A=(Expression=MaterialExpressionConstant'"TemperedGlass:MaterialExpressionConstant_3"')
+      B=(Expression=MaterialExpressionScalarParameter'"TemperedGlass:MaterialExpressionScalarParameter_10"')
+      Alpha=(Expression=MaterialExpressionFresnel'"TemperedGlass:MaterialExpressionFresnel_0"')
+      MaterialExpressionEditorX=-700
+      MaterialExpressionEditorY=600
+      MaterialExpressionGuid=E65ACD864A9532E8D9C62798DE6F1496
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_10"
+      DefaultValue=1.400000
+      ParameterName="Refraction"
+      ExpressionGUID=96D6440B42D5FCE2AB79D095EA38FDA0
+      Group="Refraction"
+      MaterialExpressionEditorX=-1075
+      MaterialExpressionEditorY=713
+      MaterialExpressionGuid=35DB8A604C85AF657528808A7E16275D
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_3"
+      DefaultValue=10.000000
+      ParameterName="Specular"
+      ExpressionGUID=F8C6164A4581444178E6DFA686ABA926
+      Group="Glass"
+      MaterialExpressionEditorX=-400
+      MaterialExpressionEditorY=120
+      MaterialExpressionGuid=00A9891A43EC31AEB04CD79FA7917B5F
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_5"
+      ParameterName="Roughness"
+      ExpressionGUID=5441DE8041DB7AFE9498E6AC0C307942
+      Group="Glass"
+      MaterialExpressionEditorX=-400
+      MaterialExpressionEditorY=220
+      MaterialExpressionGuid=D69A5E1F416161FAAEA3B2898072942A
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_8"
+      DefaultValue=0.500000
+      ParameterName="Opacity"
+      ExpressionGUID=9ADA230041D06314B9EFB1A6D2BF9069
+      Group="Glass"
+      MaterialExpressionEditorX=-400
+      MaterialExpressionEditorY=320
+      MaterialExpressionGuid=F1DFB64A4890138D26BBA7B66C37D194
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_9"
+      DefaultValue=10.000000
+      ParameterName="FresnelFalloff"
+      ExpressionGUID=D74CE2444EBB3DD8EF844EB8B655817A
+      Group="Refraction"
+      MaterialExpressionEditorX=-1415
+      MaterialExpressionEditorY=813
+      MaterialExpressionGuid=4317530447FA1A8DC6123EBF850BE636
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="MaterialExpressionVectorParameter_0"
+      DefaultValue=(R=0.110103,G=0.369792,B=0.279531,A=1.000000)
+      ParameterName="ColorGlass"
+      ExpressionGUID=431A065F45C84763958A91A547F1DD7A
+      Group="Glass"
+      MaterialExpressionEditorX=-440
+      MaterialExpressionEditorY=-140
+      MaterialExpressionGuid=FDDE6F1A425E5C0036F0D98FDFF94D0A
+      Material=Material'"TemperedGlass"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_1"
+   End Object
+   BaseColor=(Expression=MaterialExpressionVectorParameter'"MaterialExpressionVectorParameter_0"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   Specular=(Expression=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_3"')
+   Roughness=(Expression=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_5"')
+   Opacity=(Expression=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_8"')
+   BlendMode=BLEND_Translucent
+   Refraction=(Expression=MaterialExpressionFeatureLevelSwitch'"MaterialExpressionFeatureLevelSwitch_0"')
+   bEnableSeparateTranslucency=False
+   TranslucencyLightingMode=TLM_Surface
+   bUsedWithStaticLighting=True
+   bUsesDistortion=True
+   Expressions(0)=MaterialExpressionVectorParameter'"MaterialExpressionVectorParameter_0"'
+   Expressions(1)=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_3"'
+   Expressions(2)=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_5"'
+   Expressions(3)=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_8"'
+   Expressions(4)=MaterialExpressionFeatureLevelSwitch'"MaterialExpressionFeatureLevelSwitch_0"'
+   Expressions(5)=MaterialExpressionLinearInterpolate'"MaterialExpressionLinearInterpolate_0"'
+   Expressions(6)=MaterialExpressionFresnel'"MaterialExpressionFresnel_0"'
+   Expressions(7)=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_9"'
+   Expressions(8)=MaterialExpressionConstant'"MaterialExpressionConstant_3"'
+   Expressions(9)=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_10"'
+   Expressions(10)=MaterialExpressionConstant'"MaterialExpressionConstant_5"'
+   ParameterGroupData(0)=(GroupName="Glass")
+   ParameterGroupData(1)=(GroupName="Glass")
+   ParameterGroupData(2)=(GroupName="Glass")
+   ParameterGroupData(3)=(GroupName="Glass")
+   ParameterGroupData(4)=(GroupName="Refraction")
+   ParameterGroupData(5)=(GroupName="Refraction")
+   bCanMaskedBeAssumedOpaque=True
+   StateId=9E93F5934DEC725ECEB57BAC356C2319
+   CachedExpressionData=(Parameters=(RuntimeEntries[0]=(NameHashes=(440574345582452634,1701976986417175958,3929274268584483569,15684328969772911168,17678187139109688406),ParameterInfos=((Name="Roughness"),(Name="Refraction"),(Name="Specular"),(Name="Opacity"),(Name="FresnelFalloff")),ExpressionGuids=(5441DE8041DB7AFE9498E6AC0C307942,96D6440B42D5FCE2AB79D095EA38FDA0,F8C6164A4581444178E6DFA686ABA926,9ADA230041D06314B9EFB1A6D2BF9069,D74CE2444EBB3DD8EF844EB8B655817A)),RuntimeEntries[1]=(NameHashes=(17363912070350710836),ParameterInfos=((Name="ColorGlass")),ExpressionGuids=(431A065F45C84763958A91A547F1DD7A)),ScalarValues=(0.000000,1.400000,10.000000,0.500000,10.000000),VectorValues=((R=0.110103,G=0.369792,B=0.279531,A=1.000000)),ScalarMinMaxValues=((X=0.000000,Y=0.000000),(X=0.000000,Y=0.000000),(X=0.000000,Y=0.000000),(X=0.000000,Y=0.000000),(X=0.000000,Y=0.000000)),ScalarCurveValues=(None,None,None,None,None),ScalarCurveAtlasValues=(None,None,None,None,None),VectorChannelNameValues=(()),VectorUsedAsChannelMaskValues=(False)),QualityLevelsUsed=(False,False,False,False))
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_1"'
+   ParameterOverviewExpansion=(("-12Global Glass", True),("-12Global Refraction", True))
+   LightingGuid=78D1FBE1413FD6D146EE29A6894531CB
+End Object
