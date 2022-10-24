@@ -1,7 +1,0 @@
-C:\Users\huang\Documents\Unreal Projects\Test\Intermediate\Build\Win64\UE4Editor\Development\Test\Definitions.Test.h
-C:\Users\huang\Documents\Unreal Projects\Test\Source\Test\TestGameModeBase.h
-C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
-C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
-C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
-C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-C:\Users\huang\Documents\Unreal Projects\Test\Intermediate\Build\Win64\UE4Editor\Inc\Test\TestGameModeBase.generated.h
