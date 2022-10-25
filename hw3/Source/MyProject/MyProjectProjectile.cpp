@@ -32,11 +32,11 @@ AMyProjectProjectile::AMyProjectProjectile()
 		// Use this component to drive this projectile's movement.
 		ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 		ProjectileMovementComponent->SetUpdatedComponent(CollisionComponent);
-		ProjectileMovementComponent->InitialSpeed = 3000.0f;
-		ProjectileMovementComponent->MaxSpeed = 3000.0f;
+		ProjectileMovementComponent->InitialSpeed = 2000.0f;
+		ProjectileMovementComponent->MaxSpeed = 2000.0f;
 		ProjectileMovementComponent->bRotationFollowsVelocity = true;
 		ProjectileMovementComponent->bShouldBounce = true;
-		ProjectileMovementComponent->Bounciness = 0.3f;
+		ProjectileMovementComponent->Bounciness = 1.0f;
 		ProjectileMovementComponent->ProjectileGravityScale = 1.0f;
 	}
 
@@ -60,7 +60,7 @@ AMyProjectProjectile::AMyProjectProjectile()
 	}
 
 	// Delete the projectile after 3 seconds.
-	InitialLifeSpan = 3.0f;
+	// InitialLifeSpan = 3.0f;
 
 }
 
@@ -92,7 +92,7 @@ void AMyProjectProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* Othe
 		OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
 	}
 
-	Destroy();
+	// Destroy();
 }
 
 

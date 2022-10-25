@@ -32,8 +32,8 @@
 /wd4244
 /wd4838
 /I .
-/I C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Inc\MyProject
-/I C:\Users\Admin\Downloads\CSE381\hw3\Source
+/I C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Inc\MyProject
+/I C:\CSE381\hw3\Source
 /I Runtime
 /I Runtime\TraceLog\Public
 /I Runtime\Core\Public
@@ -262,12 +262,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\MyProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\MyProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\MyProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Users\Admin\Downloads\CSE381\hw3\Source\MyProject\MyProjectCharacter.cpp"
-/FI"C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h"
-/Fo"C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyProjectCharacter.cpp.obj"
+/FI"C:\CSE381\hw3\Intermediate\Build\Win64\MyProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\CSE381\hw3\Intermediate\Build\Win64\MyProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\CSE381\hw3\Intermediate\Build\Win64\MyProjectEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\CSE381\hw3\Source\MyProject\MyProjectCharacter.cpp"
+/FI"C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h"
+/Fo"C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\MyProjectCharacter.cpp.obj"
 /TP
 /GR-
 /W4

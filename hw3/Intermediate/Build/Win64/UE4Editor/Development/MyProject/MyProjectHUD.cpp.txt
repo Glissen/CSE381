@@ -1,5 +1,5 @@
-C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h
-C:\Users\Admin\Downloads\CSE381\hw3\Source\MyProject\MyProjectHUD.h
+C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h
+C:\CSE381\hw3\Source\MyProject\MyProjectHUD.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/HUD.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/HUDHitBox.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/DebugTextInfo.h
@@ -14,4 +14,4 @@ C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\SlateCore\Public\Fonts
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\SlateCore\FontProviderInterface.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Font.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Canvas.generated.h
-C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\MyProjectHUD.generated.h
+C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\MyProjectHUD.generated.h
