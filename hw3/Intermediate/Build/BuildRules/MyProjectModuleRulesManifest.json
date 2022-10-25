@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\huang\\Downloads\\hw1(2)\\Source\\MyProject\\MyProject.Build.cs",
-		"C:\\Users\\huang\\Downloads\\hw1(2)\\Source\\MyProject.Target.cs",
-		"C:\\Users\\huang\\Downloads\\hw1(2)\\Source\\MyProjectEditor.Target.cs"
+		"C:\\Users\\Admin\\Downloads\\CSE381\\hw3\\Source\\MyProject\\MyProject.Build.cs",
+		"C:\\Users\\Admin\\Downloads\\CSE381\\hw3\\Source\\MyProject.Target.cs",
+		"C:\\Users\\Admin\\Downloads\\CSE381\\hw3\\Source\\MyProjectEditor.Target.cs"
 	],
 	"EngineVersion": "4.27.2"
 }

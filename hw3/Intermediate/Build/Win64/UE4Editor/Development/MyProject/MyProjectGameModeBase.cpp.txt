@@ -1,7 +1,7 @@
-C:\Users\huang\Downloads\hw1(2)\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h
-C:\Users\huang\Downloads\hw1(2)\Source\MyProject\MyProjectGameModeBase.h
-C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
-C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
-C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
-C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-C:\Users\huang\Downloads\hw1(2)\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\MyProjectGameModeBase.generated.h
+C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h
+C:\Users\Admin\Downloads\CSE381\hw3\Source\MyProject\MyProjectGameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
+C:\Users\Admin\Downloads\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\MyProjectGameModeBase.generated.h

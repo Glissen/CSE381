@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define MYPROJECT_MyProjectGameModeBase_generated_h
 
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_SPARSE_DATA
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_RPC_WRAPPERS
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_SPARSE_DATA
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_RPC_WRAPPERS
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMyProjectGameModeBase(); \
 	friend struct Z_Construct_UClass_AMyProjectGameModeBase_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(AMyProjectGameModeBase)
 
 
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_INCLASS \
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesAMyProjectGameModeBase(); \
 	friend struct Z_Construct_UClass_AMyProjectGameModeBase_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AMyProjectGameModeBase)
 
 
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AMyProjectGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMyProjectGameModeBase) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AMyProjectGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,28 +60,28 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMyProjectGameModeBase)
 
 
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_12_PROLOG
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_GENERATED_BODY_LEGACY \
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_12_PROLOG
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_SPARSE_DATA \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_RPC_WRAPPERS \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_INCLASS \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_SPARSE_DATA \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_RPC_WRAPPERS \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_INCLASS \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_GENERATED_BODY \
+#define hw3_Source_MyProject_MyProjectGameModeBase_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_SPARSE_DATA \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
-	hw1_2__Source_MyProject_MyProjectGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_SPARSE_DATA \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
+	hw3_Source_MyProject_MyProjectGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -89,7 +89,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> MYPROJECT_API UClass* StaticClass<class AMyProjectGameModeBase>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID hw1_2__Source_MyProject_MyProjectGameModeBase_h
+#define CURRENT_FILE_ID hw3_Source_MyProject_MyProjectGameModeBase_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
