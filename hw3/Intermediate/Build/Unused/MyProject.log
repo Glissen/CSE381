@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Building 7 actions with 12 processes...
     [1/7] MyProject.init.gen.cpp
     [2/7] MyProjectWolfie.cpp
@@ -25,12 +26,17 @@
 >>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
 =======
 >>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
+=======
+>>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
   Building 1 action with 16 processes...
     [1/1] MyProjectEditor.target
   Total time in Parallel executor: 0.23 seconds
   Total execution time: 0.92 seconds
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
+=======
 >>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
 =======
 >>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
