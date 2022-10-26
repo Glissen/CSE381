@@ -10,8 +10,10 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class UPrimitiveComponent;
 class AActor;
-struct FVector;
 struct FHitResult;
+struct FDamageEvent;
+class AController;
+struct FVector;
 #ifdef MYPROJECT_MyProjectWolfie_generated_h
 #error "MyProjectWolfie.generated.h already included, missing '#pragma once' in MyProjectWolfie.h"
 #endif
@@ -20,11 +22,15 @@ struct FHitResult;
 #define hw3_Source_MyProject_MyProjectWolfie_h_12_SPARSE_DATA
 #define hw3_Source_MyProject_MyProjectWolfie_h_12_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execOnOverlapBegin); \
+	DECLARE_FUNCTION(execTakeDamage); \
 	DECLARE_FUNCTION(execOnHit);
 
 
 #define hw3_Source_MyProject_MyProjectWolfie_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnOverlapBegin); \
+	DECLARE_FUNCTION(execTakeDamage); \
 	DECLARE_FUNCTION(execOnHit);
 
 

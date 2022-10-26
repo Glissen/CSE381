@@ -20,11 +20,13 @@ struct FHitResult;
 #define hw3_Source_MyProject_MyProjectProjectile_h_14_SPARSE_DATA
 #define hw3_Source_MyProject_MyProjectProjectile_h_14_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSetDamage); \
 	DECLARE_FUNCTION(execOnHit);
 
 
 #define hw3_Source_MyProject_MyProjectProjectile_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSetDamage); \
 	DECLARE_FUNCTION(execOnHit);
 
 

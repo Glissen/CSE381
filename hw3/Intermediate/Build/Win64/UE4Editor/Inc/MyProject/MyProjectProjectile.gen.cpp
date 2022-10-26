@@ -26,6 +26,14 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectProjectile() {}
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UMaterialInstanceDynamic_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AMyProjectProjectile::execSetDamage)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_Dmg);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetDamage(Z_Param_Dmg);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AMyProjectProjectile::execOnHit)
 	{
 		P_GET_OBJECT(UPrimitiveComponent,Z_Param_HitComponent);
@@ -43,6 +51,7 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectProjectile() {}
 		UClass* Class = AMyProjectProjectile::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "OnHit", &AMyProjectProjectile::execOnHit },
+			{ "SetDamage", &AMyProjectProjectile::execSetDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -120,6 +129,38 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectProjectile() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics
+	{
+		struct MyProjectProjectile_eventSetDamage_Parms
+		{
+			int32 Dmg;
+		};
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Dmg;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::NewProp_Dmg = { "Dmg", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(MyProjectProjectile_eventSetDamage_Parms, Dmg), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::NewProp_Dmg,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MyProjectProjectile.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyProjectProjectile, nullptr, "SetDamage", nullptr, nullptr, sizeof(MyProjectProjectile_eventSetDamage_Parms), Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyProjectProjectile_SetDamage()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyProjectProjectile_SetDamage_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AMyProjectProjectile_NoRegister()
 	{
 		return AMyProjectProjectile::StaticClass();
@@ -147,6 +188,10 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectProjectile() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProjectileMaterialInstance_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ProjectileMaterialInstance;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Damage;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -157,6 +202,7 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectProjectile() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMyProjectProjectile_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMyProjectProjectile_OnHit, "OnHit" }, // 2243204267
+		{ &Z_Construct_UFunction_AMyProjectProjectile_SetDamage, "SetDamage" }, // 3994517874
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyProjectProjectile_Statics::Class_MetaDataParams[] = {
@@ -203,11 +249,19 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectProjectile() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_ProjectileMaterialInstance = { "ProjectileMaterialInstance", nullptr, (EPropertyFlags)0x0010000000030001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyProjectProjectile, ProjectileMaterialInstance), Z_Construct_UClass_UMaterialInstanceDynamic_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_ProjectileMaterialInstance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_ProjectileMaterialInstance_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_Damage_MetaData[] = {
+		{ "Category", "Damage" },
+		{ "ModuleRelativePath", "MyProjectProjectile.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0010000000030001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyProjectProjectile, Damage), METADATA_PARAMS(Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_Damage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_Damage_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyProjectProjectile_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_CollisionComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_ProjectileMovementComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_ProjectileMeshComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_ProjectileMaterialInstance,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyProjectProjectile_Statics::NewProp_Damage,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMyProjectProjectile_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMyProjectProjectile>::IsAbstract,
@@ -236,7 +290,7 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectProjectile() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMyProjectProjectile, 3174423238);
+	IMPLEMENT_CLASS(AMyProjectProjectile, 1324604389);
 	template<> MYPROJECT_API UClass* StaticClass<AMyProjectProjectile>()
 	{
 		return AMyProjectProjectile::StaticClass();

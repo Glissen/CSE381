@@ -2,12 +2,18 @@
 
 
 #include "MyProjectProjectile.h"
+#include "MyProjectWolfie.h"
+#include "Kismet/GameplayStatics.h"
+#include "GameFramework/DamageType.h"
 
 // Sets default values
 AMyProjectProjectile::AMyProjectProjectile()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	if (!Damage)
+		Damage = 1;
 
 	if (!RootComponent)
 	{
@@ -64,6 +70,12 @@ AMyProjectProjectile::AMyProjectProjectile()
 
 }
 
+// Called to set the projectile damage
+void AMyProjectProjectile::SetDamage(int Dmg)
+{
+	Damage = Dmg;
+}
+
 // Called when the game starts or when spawned
 void AMyProjectProjectile::BeginPlay()
 {
@@ -75,7 +87,6 @@ void AMyProjectProjectile::BeginPlay()
 void AMyProjectProjectile::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 // Function that initializes the projectile's velocity in the shoot direction.
@@ -87,12 +98,38 @@ void AMyProjectProjectile::FireInDirection(const FVector& ShootDirection)
 // Function that is called when the projectile hits something.
 void AMyProjectProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
 {
-	if (OtherActor != this && OtherComponent->IsSimulatingPhysics())
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Hiiiii!"));
+	//if (OtherActor != NULL &&)
+	//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, "Bad");
+	///*else
+	//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, OtherActor->GetActorLabel());*/
+	if (OtherActor != this && OtherActor != NULL && !OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) && OtherActor->GetActorLabel() != "BP_MyProjectCharacter")
 	{
-		OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
+		//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("WALL!"));
+		SetDamage(0);
 	}
+	else if (OtherActor != this && OtherActor != NULL && (OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) || OtherActor->GetActorLabel() == "BP_MyProjectCharacter") && OtherComponent->IsSimulatingPhysics())
+	{
+		//OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
+		//AMyProjectWolfie* Wolfie = (AMyProjectWolfie *)Hit.GetActor();
+		AActor* Wolfie = Hit.GetActor();
+		/*GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, this->GetVelocity().ToString());
+		if (this->GetVelocity().Component(2) != 0)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Black, TEXT("NOOOOO"));
+			UGameplayStatics::ApplyDamage(Wolfie, 1, this->GetInstigatorController(), this, UDamageType::StaticClass());
+		}
+		else
+		{*/
+		UGameplayStatics::ApplyDamage(Wolfie, Damage, this->GetInstigatorController(), this, UDamageType::StaticClass());
+		//Destroy();
+		//Destroy();
+		/*}*/
 
-	// Destroy();
+		//UGameplayStatics::ApplyDamage(Wolfie, 1, )
+		/*if (temp->test == 123)
+			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("YAYYYY"));*/
+	}
 }
 
 
