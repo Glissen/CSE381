@@ -29,6 +29,13 @@ void AMyProjectCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (SpawnedBalls < 15) {
+		DeltaSecond += DeltaTime;
+		if (DeltaSecond > SpawnInterval) {
+			DeltaSecond -= SpawnInterval;
+			SpawnBalls();
+		}
+	}
 }
 
 // Called to bind functionality to input
@@ -100,6 +107,44 @@ void AMyProjectCharacter::Fire()
 				// Set the projectile's initial trajectory.
 				FVector LaunchDirection = MuzzleRotation.Vector();
 				Projectile->FireInDirection(LaunchDirection);
+			}
+		}
+	}
+}
+
+
+void AMyProjectCharacter::SpawnBalls()
+{
+	// Attempt to fire a projectile.
+	if (ProjectileClass)
+	{
+		// Get the camera transform.
+		FVector SpawnLocation1 = FVector(5400.0f, 650.0f, 400.0f);
+		FVector SpawnLocation2 = FVector(1000.0f, 1200.0f, 400.0f);
+		FRotator SpawnRotation1 = FRotator(0.0f, 0.0f, 0.0f);
+		SpawnRotation1.Pitch += 45.0f;
+		FRotator SpawnRotation2 = FRotator(0.0f, 0.0f, 0.0f);
+		SpawnRotation2.Pitch += 135.0f;
+
+		UWorld* World = GetWorld();
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Spawn balls!"));
+		if (World)
+		{
+			FActorSpawnParameters SpawnParams;
+			SpawnParams.Owner = this;
+			SpawnParams.Instigator = GetInstigator();
+
+			// Spawn the projectile at the muzzle.
+			AMyProjectProjectile* Projectile1 = World->SpawnActor<AMyProjectProjectile>(ProjectileClass, SpawnLocation1, SpawnRotation1, SpawnParams);
+			AMyProjectProjectile* Projectile2 = World->SpawnActor<AMyProjectProjectile>(ProjectileClass, SpawnLocation2, SpawnRotation2, SpawnParams);
+			if (Projectile1 && Projectile2)
+			{
+				// Set the projectile's initial trajectory.
+				FVector LaunchDirection1 = SpawnRotation1.Vector();
+				FVector LaunchDirection2 = SpawnRotation2.Vector();
+				Projectile1->FireInDirection(LaunchDirection1);
+				Projectile2->FireInDirection(LaunchDirection2);
+				SpawnedBalls++;
 			}
 		}
 	}

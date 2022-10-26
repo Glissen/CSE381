@@ -47,4 +47,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	FVector MuzzleOffset;
 
+
+private:
+	virtual void SpawnBalls();
+	float DeltaSecond;
+	int SpawnedBalls;
+	const int SpawnInterval = 10;
 };
