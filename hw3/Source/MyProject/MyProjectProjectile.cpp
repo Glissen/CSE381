@@ -32,11 +32,11 @@ AMyProjectProjectile::AMyProjectProjectile()
 		// Use this component to drive this projectile's movement.
 		ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 		ProjectileMovementComponent->SetUpdatedComponent(CollisionComponent);
-		ProjectileMovementComponent->InitialSpeed = 2000.0f;
-		ProjectileMovementComponent->MaxSpeed = 2000.0f;
+		ProjectileMovementComponent->InitialSpeed = 2500.0f;
+		ProjectileMovementComponent->MaxSpeed = 2500.0f;
 		ProjectileMovementComponent->bRotationFollowsVelocity = true;
 		ProjectileMovementComponent->bShouldBounce = true;
-		ProjectileMovementComponent->Bounciness = 1.0f;
+		ProjectileMovementComponent->Bounciness = 0.5f;
 		ProjectileMovementComponent->ProjectileGravityScale = 1.0f;
 	}
 
