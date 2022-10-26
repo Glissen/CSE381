@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\MyProject.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{E858292B-B069-4097-9798-C276128B86E7}</UniqueIdentifier>
+      <UniqueIdentifier>{5F191BCC-EAD2-4A31-857A-58C276723A5F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\MyProject.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\wolfiedance.blend" />
     <Filter Include="Config">
-      <UniqueIdentifier>{DBFA93DF-1FAB-4A01-BAFB-1BE06EF5B3DD}</UniqueIdentifier>
+      <UniqueIdentifier>{5BDE4952-7C3E-4AFE-AE43-CA56CD958E23}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -28,7 +28,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\MyProject">
-      <UniqueIdentifier>{C1DF060C-7FD9-49E3-8A18-56368E0B5647}</UniqueIdentifier>
+      <UniqueIdentifier>{1A50D02C-A999-476E-8F7D-DB2165AC9690}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\MyProject\MyProject.Build.cs">
       <Filter>Source\MyProject</Filter>
