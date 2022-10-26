@@ -2,22 +2,6 @@
 	"BuildId": "17155196",
 	"Modules": 
 	{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		"MyProject": "UE4Editor-MyProject-7419.dll"
-=======
-		"MyProject": "UE4Editor-MyProject-7215.dll"
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-		"MyProject": "UE4Editor-MyProject-7215.dll"
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-		"MyProject": "UE4Editor-MyProject-7215.dll"
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-		"MyProject": "UE4Editor-MyProject-7215.dll"
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
+		"MyProject": "UE4Editor-MyProject.dll"
 	}
 }

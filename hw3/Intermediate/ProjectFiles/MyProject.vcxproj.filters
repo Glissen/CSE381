@@ -3,23 +3,7 @@
   <ItemGroup>
     <None Include="..\..\MyProject.uproject" />
     <Filter Include="Source">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <UniqueIdentifier>{33670BF4-9FF2-49E8-BEB4-B76999D51FB5}</UniqueIdentifier>
-=======
-      <UniqueIdentifier>{5F191BCC-EAD2-4A31-857A-58C276723A5F}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-      <UniqueIdentifier>{5F191BCC-EAD2-4A31-857A-58C276723A5F}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-      <UniqueIdentifier>{5F191BCC-EAD2-4A31-857A-58C276723A5F}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-      <UniqueIdentifier>{5F191BCC-EAD2-4A31-857A-58C276723A5F}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
+      <UniqueIdentifier>{A578F69E-77F6-4002-99A5-28A50879F34B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\MyProject.Target.cs">
       <Filter>Source</Filter>
@@ -29,23 +13,7 @@
     </None>
     <None Include="..\..\wolfiedance.blend" />
     <Filter Include="Config">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <UniqueIdentifier>{9B8A8078-959C-4A22-A486-20E02303AD5F}</UniqueIdentifier>
-=======
-      <UniqueIdentifier>{5BDE4952-7C3E-4AFE-AE43-CA56CD958E23}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-      <UniqueIdentifier>{5BDE4952-7C3E-4AFE-AE43-CA56CD958E23}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-      <UniqueIdentifier>{5BDE4952-7C3E-4AFE-AE43-CA56CD958E23}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-      <UniqueIdentifier>{5BDE4952-7C3E-4AFE-AE43-CA56CD958E23}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
+      <UniqueIdentifier>{44248EE1-7854-448C-8FEE-089CF1E7AE31}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -60,23 +28,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\MyProject">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <UniqueIdentifier>{D6DAC6F6-BFDC-4A48-AC1E-1D8339F336B3}</UniqueIdentifier>
-=======
-      <UniqueIdentifier>{1A50D02C-A999-476E-8F7D-DB2165AC9690}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-      <UniqueIdentifier>{1A50D02C-A999-476E-8F7D-DB2165AC9690}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-      <UniqueIdentifier>{1A50D02C-A999-476E-8F7D-DB2165AC9690}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
-=======
-      <UniqueIdentifier>{1A50D02C-A999-476E-8F7D-DB2165AC9690}</UniqueIdentifier>
->>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
+      <UniqueIdentifier>{B07F1D50-1CFF-47B2-A2B5-0DB5047C6AFD}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\MyProject\MyProject.Build.cs">
       <Filter>Source\MyProject</Filter>
