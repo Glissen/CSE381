@@ -7,6 +7,7 @@
   Using Visual Studio 2019 14.29.30146 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Building 7 actions with 12 processes...
     [1/7] MyProject.init.gen.cpp
     [2/7] MyProjectWolfie.cpp
@@ -22,11 +23,16 @@
 =======
 =======
 >>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
+=======
+>>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
   Building 1 action with 16 processes...
     [1/1] MyProjectEditor.target
   Total time in Parallel executor: 0.23 seconds
   Total execution time: 0.92 seconds
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
+=======
 >>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
 =======
 >>>>>>> ae281f3d0e20775a6df7ba2d19092c67ab5ba835
