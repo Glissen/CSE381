@@ -82,13 +82,14 @@ void AMyProjectCharacter::MoveRight(float Value)
 
 float AMyProjectCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
-	if (DamageAmount != 3.0f && !Ball)
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, FString::FromInt(DamageAmount));
+	if (DamageAmount != 3 && !Ball)
 	{
 		Ball = true;
 		DamageCauser->Destroy();
 		return 0.0f;
 	}
-	else if (DamageAmount == 3.0f)
+	else if (DamageAmount == 3)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "DEAD");
 		Destroy();
@@ -154,7 +155,7 @@ void AMyProjectCharacter::SpawnBalls()
 		SpawnRotation2.Pitch += 135.0f;
 
 		UWorld* World = GetWorld();
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Spawn balls!"));
+		//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Spawn balls!"));
 		if (World)
 		{
 			FActorSpawnParameters SpawnParams;
@@ -184,7 +185,7 @@ void AMyProjectCharacter::OnHit(UPrimitiveComponent* HitComponent, AActor* Other
 	//if (OtherActor != NULL &&)
 	//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, "Bad");
 	///*else
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, OtherActor->GetActorLabel());
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, OtherActor->GetActorLabel());
 	//if (OtherActor != this && OtherActor != NULL && !OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) && OtherActor->GetActorLabel() != "TestChar")
 	//{
 	//	if (!OtherActor->GetActorLabel().Contains("Floor") && !OtherActor->GetActorLabel().Contains("MyProjectProjectile"))

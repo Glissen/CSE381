@@ -99,11 +99,9 @@ void AMyProjectWolfie::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 void AMyProjectWolfie::Fire()
 {
 	// Attempt to fire a projectile.
-	if (!ProjectileClass) 
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Black, TEXT("HORRIBLE"));
 	if (ProjectileClass && Ball)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("FIRETOHELL!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("FIRETOHELL!"));
 		// Get the camera transform.
 		/*FVector CameraLocation;
 		FRotator CameraRotation;
@@ -118,30 +116,36 @@ void AMyProjectWolfie::Fire()
 		// Skew the aim to be slightly upwards.
 		//FRotator MuzzleRotation = CameraRotation;
 		//MuzzleRotation.Pitch += 0.0f;
-		FVector WolfieLocation = GetActorLocation();
-		FVector PlayerLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+		FVector WolfieLocation = GetActorLocation() + FVector(150, 0, 0);
+		if (GetWorld()) {
+			if (GetWorld()->GetFirstPlayerController()) {
+				if (GetWorld()->GetFirstPlayerController()->GetPawn()) {
+					FVector PlayerLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
 
-		FRotator WolfieRotation = (PlayerLocation - WolfieLocation).GetUnsafeNormal().Rotation();
-		
+					FRotator WolfieRotation = (PlayerLocation - WolfieLocation).GetUnsafeNormal().Rotation();
 
-		UWorld* World = GetWorld();
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, WolfieLocation.ToString());
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, PlayerLocation.ToString());
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, WolfieRotation.ToString());
-		if (World)
-		{
-			FActorSpawnParameters SpawnParams;
-			SpawnParams.Owner = this;
-			SpawnParams.Instigator = GetInstigator();
 
-			// Spawn the projectile at the muzzle.
-			AMyProjectProjectile* Projectile = World->SpawnActor<AMyProjectProjectile>(ProjectileClass, WolfieLocation, WolfieRotation, SpawnParams);
-			if (Projectile)
-			{
-				Projectile->SetDamage(3);
-				// Set the projectile's initial trajectory.
-				FVector LaunchDirection = WolfieRotation.Vector();
-				Projectile->FireInDirection(LaunchDirection);
+					UWorld* World = GetWorld();
+					/*GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, WolfieLocation.ToString());
+					GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, PlayerLocation.ToString());
+					GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Yellow, WolfieRotation.ToString());*/
+					if (World)
+					{
+						FActorSpawnParameters SpawnParams;
+						SpawnParams.Owner = this;
+						SpawnParams.Instigator = GetInstigator();
+
+						// Spawn the projectile at the muzzle.
+						AMyProjectProjectile* Projectile = World->SpawnActor<AMyProjectProjectile>(ProjectileClass, WolfieLocation, WolfieRotation, SpawnParams);
+						if (Projectile)
+						{
+							Projectile->SetDamage(3);
+							// Set the projectile's initial trajectory.
+							FVector LaunchDirection = WolfieRotation.Vector();
+							Projectile->FireInDirection(LaunchDirection);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -157,7 +161,7 @@ float AMyProjectWolfie::TakeDamage(float DamageAmount, FDamageEvent const& Damag
 
 	if (DamageAmount == 1 && !Ball) 
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("TAKEDAMAGE"));
+		//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("TAKEDAMAGE"));
 		Ball = true;
 		DamageCauser->Destroy();
 		return 0.0f;

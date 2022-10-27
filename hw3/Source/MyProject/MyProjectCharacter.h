@@ -62,5 +62,5 @@ private:
 	virtual void SpawnBalls();
 	float DeltaSecond;
 	int SpawnedBalls;
-	const int SpawnInterval = 1;
+	const int SpawnInterval = 10;
 };

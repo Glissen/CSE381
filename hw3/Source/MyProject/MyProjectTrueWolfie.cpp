@@ -83,12 +83,6 @@ void AMyProjectTrueWolfie::Tick(float DeltaTime)
 	FVector location = GetActorLocation();
 	if (location.Component(0) < 3210 || ((Direction1.Component(0) < 0 && Direction2 > 0) || (Direction1.Component(0) > 0 && Direction2 < 0)))
 		AddMovementInput(Direction1.GetUnsafeNormal(), Direction2 * 0.5);
-
-	if (Ball)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, FString::FromInt(Ball));
-		Fire();
-	}
 }
 
 // Called to bind functionality to input
@@ -101,8 +95,6 @@ void AMyProjectTrueWolfie::SetupPlayerInputComponent(UInputComponent* PlayerInpu
 void AMyProjectTrueWolfie::Fire()
 {
 	// Attempt to fire a projectile.
-	if (!ProjectileClass)
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Black, TEXT("HORRIBLE"));
 	if (ProjectileClass && Ball)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("FIRETOHELL!"));
@@ -150,18 +142,9 @@ void AMyProjectTrueWolfie::OnHit(UPrimitiveComponent* HitComponent, AActor* Othe
 
 float AMyProjectTrueWolfie::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
-
-	if (DamageAmount != 2.0f && !Ball)
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Purple, FString::FromInt(DamageAmount));
+	if (DamageAmount == 2)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("TAKEDAMAGE"));
-		Ball = true;
-		DamageCauser->Destroy();
-		return 0.0f;
-	}
-	else if (DamageAmount == 2)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, FString::FromInt(DamageAmount));
-		
 		AActor* player = GetWorld()->GetFirstPlayerController()->GetPawn();
 		player->Destroy();
 		Destroy();

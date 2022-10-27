@@ -39,11 +39,11 @@ AMyProjectProjectile::AMyProjectProjectile()
 		// Use this component to drive this projectile's movement.
 		ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 		ProjectileMovementComponent->SetUpdatedComponent(CollisionComponent);
-		ProjectileMovementComponent->InitialSpeed = 2500.0f;
+		ProjectileMovementComponent->InitialSpeed = 1500.0f;
 		ProjectileMovementComponent->MaxSpeed = 2500.0f;
 		ProjectileMovementComponent->bRotationFollowsVelocity = true;
 		ProjectileMovementComponent->bShouldBounce = true;
-		ProjectileMovementComponent->Bounciness = 0.5f;
+		ProjectileMovementComponent->Bounciness = 1.0f;
 		ProjectileMovementComponent->ProjectileGravityScale = 1.0f;
 	}
 
@@ -143,12 +143,14 @@ void AMyProjectProjectile::OnOverlapBegin(UPrimitiveComponent* OverlappedCompone
 	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Hiiiii!"));
 	//if (OtherActor != this && OtherActor != NULL && !OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) && OtherActor->GetActorLabel() != "TestChar")
 	//{
-	//	/*if (!OtherActor->GetActorLabel().Contains("Floor") && !OtherActor->GetActorLabel().Contains("MyProjectProjectile"))
-	//		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, OtherActor->GetActorLabel());*/
-	//	
+	/*if (!OtherActor->GetActorLabel().Contains("Floor") && !OtherActor->GetActorLabel().Contains("MyProjectProjectile"))
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, OtherActor->GetActorLabel());*/
+	
 	//}
 	//else 
-	if (OtherActor != this && OtherActor != NULL && (OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) || OtherActor->GetActorLabel() == "TestChar"))
+	if (OtherActor != this && OtherActor != NULL && (OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) 
+		|| OtherActor->GetActorLabel().Contains("MyProjectTrueWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) 
+		|| OtherActor->GetActorLabel() == "TestChar"))
 	{
 		//OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
 		//AMyProjectWolfie* Wolfie = (AMyProjectWolfie *)Hit.GetActor();
