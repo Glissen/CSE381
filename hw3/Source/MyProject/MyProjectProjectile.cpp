@@ -26,7 +26,8 @@ AMyProjectProjectile::AMyProjectProjectile()
 		// Set the sphere's collision profile name to "Projectile".
 		CollisionComponent->BodyInstance.SetCollisionProfileName(TEXT("Projectile"));
 		// Event called when component hits something.
-		CollisionComponent->OnComponentHit.AddDynamic(this, &AMyProjectProjectile::OnHit);
+		//CollisionComponent->OnComponentHit.AddDynamic(this, &AMyProjectProjectile::OnHit);
+		CollisionComponent->OnComponentBeginOverlap.AddDynamic(this, &AMyProjectProjectile::OnOverlapBegin);
 		// Set the sphere's collision radius.
 		CollisionComponent->InitSphereRadius(15.0f);
 		// Set the root component to be the collision component.
@@ -65,6 +66,8 @@ AMyProjectProjectile::AMyProjectProjectile()
 		ProjectileMeshComponent->SetupAttachment(RootComponent);
 	}
 
+	bGenerateOverlapEventsDuringLevelStreaming = true;
+
 	// Delete the projectile after 3 seconds.
 	// InitialLifeSpan = 3.0f;
 
@@ -96,23 +99,60 @@ void AMyProjectProjectile::FireInDirection(const FVector& ShootDirection)
 }
 
 // Function that is called when the projectile hits something.
-void AMyProjectProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
+//void AMyProjectProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
+//{
+//	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Hiiiii!"));
+//	//if (OtherActor != NULL &&)
+//	//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, "Bad");
+//	///*else
+//	//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, OtherActor->GetActorLabel());*/
+//	if (OtherActor != this && OtherActor != NULL && !OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) && OtherActor->GetActorLabel() != "TestChar")
+//	{
+//		if (!OtherActor->GetActorLabel().Contains("Floor") && !OtherActor->GetActorLabel().Contains("MyProjectProjectile"))
+//			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, OtherActor->GetActorLabel()); 
+//		SetDamage(1);
+//	}
+//	else if (OtherActor != this && OtherActor != NULL && (OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) || OtherActor->GetActorLabel() == "TestChar"))
+//	{
+//		//OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
+//		//AMyProjectWolfie* Wolfie = (AMyProjectWolfie *)Hit.GetActor();
+//		AActor* Wolfie = Hit.GetActor();
+//		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, Wolfie->GetActorLabel());
+//		/*GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, this->GetVelocity().ToString());
+//		if (this->GetVelocity().Component(2) != 0)
+//		{
+//			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Black, TEXT("NOOOOO"));
+//			UGameplayStatics::ApplyDamage(Wolfie, 1, this->GetInstigatorController(), this, UDamageType::StaticClass());
+//		}
+//		else
+//		{*/
+//		UGameplayStatics::ApplyDamage(Wolfie, 2, this->GetInstigatorController(), this, UDamageType::StaticClass());
+//		SetDamage(1);
+//		//Destroy();
+//		//Destroy();
+//		/*}*/
+//
+//		//UGameplayStatics::ApplyDamage(Wolfie, 1, )
+//		/*if (temp->test == 123)
+//			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("YAYYYY"));*/
+//	}
+//}
+
+void AMyProjectProjectile::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Hiiiii!"));
-	//if (OtherActor != NULL &&)
-	//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, "Bad");
-	///*else
-	//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, OtherActor->GetActorLabel());*/
-	if (OtherActor != this && OtherActor != NULL && !OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) && OtherActor->GetActorLabel() != "BP_MyProjectCharacter")
-	{
-		//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("WALL!"));
-		SetDamage(0);
-	}
-	else if (OtherActor != this && OtherActor != NULL && (OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) || OtherActor->GetActorLabel() == "BP_MyProjectCharacter") && OtherComponent->IsSimulatingPhysics())
+	//if (OtherActor != this && OtherActor != NULL && !OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) && OtherActor->GetActorLabel() != "TestChar")
+	//{
+	//	/*if (!OtherActor->GetActorLabel().Contains("Floor") && !OtherActor->GetActorLabel().Contains("MyProjectProjectile"))
+	//		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, OtherActor->GetActorLabel());*/
+	//	
+	//}
+	//else 
+	if (OtherActor != this && OtherActor != NULL && (OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) || OtherActor->GetActorLabel() == "TestChar"))
 	{
 		//OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
 		//AMyProjectWolfie* Wolfie = (AMyProjectWolfie *)Hit.GetActor();
-		AActor* Wolfie = Hit.GetActor();
+		AActor* Wolfie = SweepResult.GetActor();
 		/*GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, this->GetVelocity().ToString());
 		if (this->GetVelocity().Component(2) != 0)
 		{
@@ -130,6 +170,9 @@ void AMyProjectProjectile::OnHit(UPrimitiveComponent* HitComponent, AActor* Othe
 		/*if (temp->test == 123)
 			GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("YAYYYY"));*/
 	}
+	if (OtherActor != this && OtherActor != NULL)
+		SetDamage(1);
 }
+
 
 

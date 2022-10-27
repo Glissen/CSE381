@@ -59,7 +59,8 @@ AMyProjectWolfie::AMyProjectWolfie()
 void AMyProjectWolfie::BeginPlay()
 {
 	Super::BeginPlay();
-
+	Direction1 = FVector(rand() % 360, rand() % 360, 0);
+	Direction2 = rand() % 2 == 1 ? 1 : -1;
 	
 }
 
@@ -67,7 +68,24 @@ void AMyProjectWolfie::BeginPlay()
 void AMyProjectWolfie::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	
+	Movement += DeltaTime;
+	//Direction1 = FVector(rand() % 360, rand() % 360, 0);
+	if (Movement > 1)
+	{
+		Direction1 = FVector(rand() % 360, rand() % 360, 0);
+		Direction2 = rand() % 2 == 1 ? 1 : -1;
+		//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, Direction1.ToString());
+		Movement = 0;
+	}
+	FVector location = GetActorLocation();
+	if (location.Component(0) < 3210 || ((Direction1.Component(0) < 0 && Direction2 > 0) || (Direction1.Component(0) > 0 && Direction2 < 0)))
+		AddMovementInput(Direction1.GetUnsafeNormal(), Direction2 * 0.5);
 
+	/*if (Ball)
+	{
+
+	}*/
 }
 
 // Called to bind functionality to input
@@ -84,14 +102,16 @@ void AMyProjectWolfie::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherAct
 
 float AMyProjectWolfie::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
-	if (DamageAmount == 0.0f && !Ball) 
+
+	if (DamageAmount != 2.0f && !Ball) 
 	{
 		Ball = true;
 		DamageCauser->Destroy();
 		return 0.0f;
 	}
-	else if (DamageAmount == 1.0f)
+	else if (DamageAmount == 2)
 	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, FString::FromInt(DamageAmount));
 		Destroy();
 		return 0.0f;
 	}

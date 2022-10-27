@@ -8,6 +8,12 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FVector;
+struct FHitResult;
+struct FDamageEvent;
+class AController;
 #ifdef MYPROJECT_MyProjectCharacter_generated_h
 #error "MyProjectCharacter.generated.h already included, missing '#pragma once' in MyProjectCharacter.h"
 #endif
@@ -16,14 +22,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define hw3_Source_MyProject_MyProjectCharacter_h_13_SPARSE_DATA
 #define hw3_Source_MyProject_MyProjectCharacter_h_13_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execOnHit); \
 	DECLARE_FUNCTION(execFire); \
+	DECLARE_FUNCTION(execTakeDamage); \
 	DECLARE_FUNCTION(execMoveRight); \
 	DECLARE_FUNCTION(execMoveForward);
 
 
 #define hw3_Source_MyProject_MyProjectCharacter_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnHit); \
 	DECLARE_FUNCTION(execFire); \
+	DECLARE_FUNCTION(execTakeDamage); \
 	DECLARE_FUNCTION(execMoveRight); \
 	DECLARE_FUNCTION(execMoveForward);
 

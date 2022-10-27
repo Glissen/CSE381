@@ -39,6 +39,9 @@ public:
 	UFUNCTION()
 	void MoveRight(float Value);
 
+	UFUNCTION()
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser);
+
 	// Function that handles firing projectiles.
 	UFUNCTION()
 	void Fire();
@@ -47,10 +50,17 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 	FVector MuzzleOffset;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Capsule)
+		UCapsuleComponent* Cap;
+
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+	bool Ball;
+
 
 private:
 	virtual void SpawnBalls();
 	float DeltaSecond;
 	int SpawnedBalls;
-	const int SpawnInterval = 10;
+	const int SpawnInterval = 1;
 };

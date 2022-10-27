@@ -44,4 +44,8 @@ public:
 	void OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
 	bool Ball = false;
+	float Movement = 0.0f;
+	float Direction2;
+	FVector Direction1;
+
 };

@@ -2,13 +2,21 @@
 
 
 #include "MyProjectCharacter.h"
+#include "Components/CapsuleComponent.h"
 
 // Sets default values
 AMyProjectCharacter::AMyProjectCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	Ball = false;
+	bGenerateOverlapEventsDuringLevelStreaming = true;
 
+	Cap = this->GetCapsuleComponent();
+	if (Cap) 
+	{
+		Cap->OnComponentHit.AddDynamic(this, &AMyProjectCharacter::OnHit);
+	}
 }
 
 // Called when the game starts or when spawned
@@ -72,10 +80,27 @@ void AMyProjectCharacter::MoveRight(float Value)
 		AddMovementInput(Direction, Value);
 }
 
+float AMyProjectCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "Hello?????");
+	if (DamageAmount != 3.0f && !Ball)
+	{
+		Ball = true;
+		DamageCauser->Destroy();
+		return 0.0f;
+	}
+	else if (DamageAmount == 3.0f)
+	{
+		Destroy();
+		return 0.0f;
+	}
+	return 0.0f;
+}
+
 void AMyProjectCharacter::Fire()
 {
 	// Attempt to fire a projectile.
-	if (ProjectileClass)
+	if (ProjectileClass && Ball)
 	{
 		// Get the camera transform.
 		FVector CameraLocation;
@@ -104,9 +129,11 @@ void AMyProjectCharacter::Fire()
 			AMyProjectProjectile* Projectile = World->SpawnActor<AMyProjectProjectile>(ProjectileClass, MuzzleLocation, MuzzleRotation, SpawnParams);
 			if (Projectile)
 			{
+				Projectile->SetDamage(2);
 				// Set the projectile's initial trajectory.
 				FVector LaunchDirection = MuzzleRotation.Vector();
 				Projectile->FireInDirection(LaunchDirection);
+				Ball = false;
 			}
 		}
 	}
@@ -119,8 +146,8 @@ void AMyProjectCharacter::SpawnBalls()
 	if (ProjectileClass)
 	{
 		// Get the camera transform.
-		FVector SpawnLocation1 = FVector(5400.0f, 650.0f, 400.0f);
-		FVector SpawnLocation2 = FVector(1000.0f, 1200.0f, 400.0f);
+		FVector SpawnLocation1 = FVector(4000.0f, 650.0f, 400.0f);
+		FVector SpawnLocation2 = FVector(2600.0f, 1200.0f, 400.0f);
 		FRotator SpawnRotation1 = FRotator(0.0f, 0.0f, 0.0f);
 		SpawnRotation1.Pitch += 45.0f;
 		FRotator SpawnRotation2 = FRotator(0.0f, 0.0f, 0.0f);
@@ -148,4 +175,44 @@ void AMyProjectCharacter::SpawnBalls()
 			}
 		}
 	}
+}
+
+ //Function that is called when the projectile hits something.
+void AMyProjectCharacter::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit)
+{
+	//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Hiiiii!"));
+	//if (OtherActor != NULL &&)
+	//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, "Bad");
+	///*else
+	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, OtherActor->GetActorLabel());
+	//if (OtherActor != this && OtherActor != NULL && !OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) && OtherActor->GetActorLabel() != "TestChar")
+	//{
+	//	if (!OtherActor->GetActorLabel().Contains("Floor") && !OtherActor->GetActorLabel().Contains("MyProjectProjectile"))
+	//		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, OtherActor->GetActorLabel()); 
+	//	SetDamage(1);
+	//}
+	//else if (OtherActor != this && OtherActor != NULL && (OtherActor->GetActorLabel().Contains("BP_MyProjectWolfie", ESearchCase::CaseSensitive, ESearchDir::FromStart) || OtherActor->GetActorLabel() == "TestChar"))
+	//{
+	//	//OtherComponent->AddImpulseAtLocation(ProjectileMovementComponent->Velocity * 100.0f, Hit.ImpactPoint);
+	//	//AMyProjectWolfie* Wolfie = (AMyProjectWolfie *)Hit.GetActor();
+	//	AActor* Wolfie = Hit.GetActor();
+	//	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, Wolfie->GetActorLabel());
+	//	/*GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, this->GetVelocity().ToString());
+	//	if (this->GetVelocity().Component(2) != 0)
+	//	{
+	//		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Black, TEXT("NOOOOO"));
+	//		UGameplayStatics::ApplyDamage(Wolfie, 1, this->GetInstigatorController(), this, UDamageType::StaticClass());
+	//	}
+	//	else
+	//	{*/
+	//	UGameplayStatics::ApplyDamage(Wolfie, 2, this->GetInstigatorController(), this, UDamageType::StaticClass());
+	//	SetDamage(1);
+	//	//Destroy();
+	//	//Destroy();
+	//	/*}*/
+
+	//	//UGameplayStatics::ApplyDamage(Wolfie, 1, )
+	//	/*if (temp->test == 123)
+	//		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, TEXT("YAYYYY"));*/
+	//}
 }

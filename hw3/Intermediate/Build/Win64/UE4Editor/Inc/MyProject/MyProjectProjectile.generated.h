@@ -10,7 +10,6 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class UPrimitiveComponent;
 class AActor;
-struct FVector;
 struct FHitResult;
 #ifdef MYPROJECT_MyProjectProjectile_generated_h
 #error "MyProjectProjectile.generated.h already included, missing '#pragma once' in MyProjectProjectile.h"
@@ -21,13 +20,13 @@ struct FHitResult;
 #define hw3_Source_MyProject_MyProjectProjectile_h_14_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execSetDamage); \
-	DECLARE_FUNCTION(execOnHit);
+	DECLARE_FUNCTION(execOnOverlapBegin);
 
 
 #define hw3_Source_MyProject_MyProjectProjectile_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execSetDamage); \
-	DECLARE_FUNCTION(execOnHit);
+	DECLARE_FUNCTION(execOnOverlapBegin);
 
 
 #define hw3_Source_MyProject_MyProjectProjectile_h_14_INCLASS_NO_PURE_DECLS \
