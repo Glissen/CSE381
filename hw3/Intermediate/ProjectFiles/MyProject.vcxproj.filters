@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\MyProject.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{8DA7BE2B-C5FB-4146-9794-CE498544D384}</UniqueIdentifier>
+      <UniqueIdentifier>{43A1D12B-D818-4835-8DDD-FCA37CD73728}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\MyProject.Target.cs">
       <Filter>Source</Filter>
@@ -13,7 +13,7 @@
     </None>
     <None Include="..\..\wolfiedance.blend" />
     <Filter Include="Config">
-      <UniqueIdentifier>{27A356C2-430B-41E3-85B5-801ED029CC0A}</UniqueIdentifier>
+      <UniqueIdentifier>{20D5E83D-30FF-41E7-B1CC-FE23C1EDDB33}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -28,7 +28,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\MyProject">
-      <UniqueIdentifier>{2035651D-267D-4C03-B223-3D5B6ADA3B21}</UniqueIdentifier>
+      <UniqueIdentifier>{C18DABC0-2C05-4708-B047-F3BA23446AD6}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\MyProject\MyProject.Build.cs">
       <Filter>Source\MyProject</Filter>
@@ -61,6 +61,12 @@
       <Filter>Source\MyProject</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\MyProject\MyProjectProjectile.h">
+      <Filter>Source\MyProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\MyProject\MyProjectTrueWolfie.cpp">
+      <Filter>Source\MyProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\MyProject\MyProjectTrueWolfie.h">
       <Filter>Source\MyProject</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\MyProject\MyProjectWolfie.cpp">

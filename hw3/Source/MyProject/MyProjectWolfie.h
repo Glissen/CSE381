@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "MyProjectProjectile.h"
 #include "MyProjectWolfie.generated.h"
 
 UCLASS()
@@ -32,6 +33,18 @@ public:
 	// Projectile mesh
 	UPROPERTY(VisibleDefaultsOnly, Category = Character)
 	USkeletalMeshComponent* WolfieSkeletalMeshComponent;
+
+	// Projectile class to spawn.
+	UPROPERTY(EditDefaultsOnly, Category = Projectile)
+		TSubclassOf<class AMyProjectProjectile> ProjectileClass;
+
+	// Gun muzzle offset from the camera location.
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+		FVector MuzzleOffset;
+
+	// Function that handles firing projectiles.
+	UFUNCTION()
+		void Fire();
 
 	// Function that is called when something hits wolfie
 	UFUNCTION()

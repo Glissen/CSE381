@@ -82,7 +82,6 @@ void AMyProjectCharacter::MoveRight(float Value)
 
 float AMyProjectCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "Hello?????");
 	if (DamageAmount != 3.0f && !Ball)
 	{
 		Ball = true;
@@ -91,6 +90,7 @@ float AMyProjectCharacter::TakeDamage(float DamageAmount, FDamageEvent const& Da
 	}
 	else if (DamageAmount == 3.0f)
 	{
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Red, "DEAD");
 		Destroy();
 		return 0.0f;
 	}

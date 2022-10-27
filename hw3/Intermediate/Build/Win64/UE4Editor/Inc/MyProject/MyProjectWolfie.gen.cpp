@@ -25,6 +25,8 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectWolfie() {}
 	ENGINE_API UClass* Z_Construct_UClass_AController_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
+	MYPROJECT_API UClass* Z_Construct_UClass_AMyProjectProjectile_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(AMyProjectWolfie::execOnOverlapBegin)
 	{
@@ -62,15 +64,47 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectWolfie() {}
 		P_THIS->OnHit(Z_Param_HitComponent,Z_Param_OtherActor,Z_Param_OtherComponent,Z_Param_NormalImpulse,Z_Param_Out_Hit);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(AMyProjectWolfie::execFire)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Fire();
+		P_NATIVE_END;
+	}
 	void AMyProjectWolfie::StaticRegisterNativesAMyProjectWolfie()
 	{
 		UClass* Class = AMyProjectWolfie::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "Fire", &AMyProjectWolfie::execFire },
 			{ "OnHit", &AMyProjectWolfie::execOnHit },
 			{ "OnOverlapBegin", &AMyProjectWolfie::execOnOverlapBegin },
 			{ "TakeDamage", &AMyProjectWolfie::execTakeDamage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AMyProjectWolfie_Fire_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMyProjectWolfie_Fire_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "// Function that handles firing projectiles.\n" },
+		{ "ModuleRelativePath", "MyProjectWolfie.h" },
+		{ "ToolTip", "Function that handles firing projectiles." },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMyProjectWolfie_Fire_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMyProjectWolfie, nullptr, "Fire", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMyProjectWolfie_Fire_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMyProjectWolfie_Fire_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMyProjectWolfie_Fire()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMyProjectWolfie_Fire_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AMyProjectWolfie_OnHit_Statics
 	{
@@ -302,6 +336,14 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectWolfie() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_WolfieSkeletalMeshComponent_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_WolfieSkeletalMeshComponent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProjectileClass_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FClassPropertyParams NewProp_ProjectileClass;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MuzzleOffset_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_MuzzleOffset;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -311,6 +353,7 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectWolfie() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_MyProject,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMyProjectWolfie_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMyProjectWolfie_Fire, "Fire" }, // 1751662410
 		{ &Z_Construct_UFunction_AMyProjectWolfie_OnHit, "OnHit" }, // 3233258536
 		{ &Z_Construct_UFunction_AMyProjectWolfie_OnOverlapBegin, "OnOverlapBegin" }, // 2439553233
 		{ &Z_Construct_UFunction_AMyProjectWolfie_TakeDamage, "TakeDamage" }, // 1153146929
@@ -342,9 +385,29 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectWolfie() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_WolfieSkeletalMeshComponent = { "WolfieSkeletalMeshComponent", nullptr, (EPropertyFlags)0x00100000000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyProjectWolfie, WolfieSkeletalMeshComponent), Z_Construct_UClass_USkeletalMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_WolfieSkeletalMeshComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_WolfieSkeletalMeshComponent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_ProjectileClass_MetaData[] = {
+		{ "Category", "Projectile" },
+		{ "Comment", "// Projectile class to spawn.\n" },
+		{ "ModuleRelativePath", "MyProjectWolfie.h" },
+		{ "ToolTip", "Projectile class to spawn." },
+	};
+#endif
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_ProjectileClass = { "ProjectileClass", nullptr, (EPropertyFlags)0x0014000000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyProjectWolfie, ProjectileClass), Z_Construct_UClass_AMyProjectProjectile_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_ProjectileClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_ProjectileClass_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_MuzzleOffset_MetaData[] = {
+		{ "Category", "Gameplay" },
+		{ "Comment", "// Gun muzzle offset from the camera location.\n" },
+		{ "ModuleRelativePath", "MyProjectWolfie.h" },
+		{ "ToolTip", "Gun muzzle offset from the camera location." },
+	};
+#endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_MuzzleOffset = { "MuzzleOffset", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMyProjectWolfie, MuzzleOffset), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_MuzzleOffset_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_MuzzleOffset_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMyProjectWolfie_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_CollisionComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_WolfieSkeletalMeshComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_ProjectileClass,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMyProjectWolfie_Statics::NewProp_MuzzleOffset,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMyProjectWolfie_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMyProjectWolfie>::IsAbstract,
@@ -373,7 +436,7 @@ void EmptyLinkFunctionForGeneratedCodeMyProjectWolfie() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMyProjectWolfie, 687827550);
+	IMPLEMENT_CLASS(AMyProjectWolfie, 1168382973);
 	template<> MYPROJECT_API UClass* StaticClass<AMyProjectWolfie>()
 	{
 		return AMyProjectWolfie::StaticClass();

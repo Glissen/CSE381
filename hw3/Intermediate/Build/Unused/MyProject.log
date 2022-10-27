@@ -2,11 +2,11 @@
   Building MyProjectEditor...
   Using Visual Studio 2019 14.29.30146 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Building 4 actions with 12 processes...
-    [1/4] MyProjectCharacter.cpp
-    [2/4] UE4Editor-MyProject-0080.lib
-       Creating library C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject-0080.lib and object C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject-0080.exp
-    [3/4] UE4Editor-MyProject-0080.dll
-       Creating library C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject-0080.suppressed.lib and object C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject-0080.suppressed.exp
+    [1/4] MyProjectWolfie.cpp
+    [2/4] UE4Editor-MyProject-0004.lib
+       Creating library C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject-0004.lib and object C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject-0004.exp
+    [3/4] UE4Editor-MyProject-0004.dll
+       Creating library C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject-0004.suppressed.lib and object C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\UE4Editor-MyProject-0004.suppressed.exp
     [4/4] MyProjectEditor.target
-  Total time in Parallel executor: 2.69 seconds
-  Total execution time: 3.72 seconds
+  Total time in Parallel executor: 1.59 seconds
+  Total execution time: 2.31 seconds

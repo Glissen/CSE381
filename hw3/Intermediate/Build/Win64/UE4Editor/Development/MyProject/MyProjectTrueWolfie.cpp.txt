@@ -1,0 +1,24 @@
+C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Development\MyProject\Definitions.MyProject.h
+C:\CSE381\hw3\Source\MyProject\MyProjectTrueWolfie.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+C:\CSE381\hw3\Source\MyProject\MyProjectProjectile.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/SphereComponent.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/ShapeComponent.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ShapeComponent.generated.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SphereComponent.generated.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/ProjectileMovementComponent.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
+C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\MyProjectProjectile.generated.h
+C:\CSE381\hw3\Intermediate\Build\Win64\UE4Editor\Inc\MyProject\MyProjectTrueWolfie.generated.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Components/CapsuleComponent.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CapsuleComponent.generated.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
+C:\Entertainment\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
